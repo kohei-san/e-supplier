@@ -30,7 +30,7 @@
 | first_name         | string    | null: false
 | last_name_kana     | string    | null: false
 | first_name_kana    | string    | null: false
-| company_name       | string    | null: false
+| company__name      | string    | null: false
 | company_name_kana  | string    | null: false
 | prefecture_id      | integer   | null: false
 | profile            | text      | null: false
@@ -52,7 +52,7 @@
 | first_name           | string    | null: false
 | last_name_kana       | string    | null: false
 | first_name_kana      | string    | null: false
-| factory_name         | string    | null: false
+| factory__name        | string    | null: false
 | factory_name_kana    | string    | null: false
 | prefecture_id        | integer   | null: false
 | profile              | text      | null: false
