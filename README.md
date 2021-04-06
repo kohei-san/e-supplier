@@ -30,9 +30,10 @@
 | first_name         | string    | null: false
 | last_name_kana     | string    | null: false
 | first_name_kana    | string    | null: false
-| factory__name      | string    | null: false
-| factory_name_kana  | string    | null: false
+| company__name      | string    | null: false
+| company_name_kana  | string    | null: false
 | prefecture_id      | integer   | null: false
+| profile            | text      | null: false
 
 ### association
 - has_many :parts
@@ -54,6 +55,7 @@
 | factory__name        | string    | null: false
 | factory_name_kana    | string    | null: false
 | prefecture_id        | integer   | null: false
+| profile              | text      | null: false
 
 ### association
 - has_many :talk_room
@@ -65,9 +67,8 @@
 |----------------------------------------------------------
 | name                 | string     | null: false
 | info                 | text       | null: false
+| material_id          | integer    | null: false
 | process_id           | integer    | null: false
-| material_id          | integer    | null: false
-| material_id          | integer    | null: false
 | deadline_id          | integer    | null: false
 | user                 | references | null: false, foreign_key:true
 
@@ -80,7 +81,6 @@
 |----------------------------------------------------------
 | buyer        | references | null: false foreign_key: true
 | supplier     | references | null: false foreign_key: true
-| comments     | references | null: false foreign_key: true
 
 ### association
 - belongs_to :buyer
