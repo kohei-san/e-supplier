@@ -70,7 +70,7 @@
 | material_id          | integer    | null: false
 | process_id           | integer    | null: false
 | deadline_id          | integer    | null: false
-| user                 | references | null: false, foreign_key:true
+| supplier             | references | null: false, foreign_key:true
 
 ### association
 - belongs_to :buyer
