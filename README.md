@@ -18,6 +18,90 @@
 
 * データベース設計
 
+## buyer
+
+| columns            | style     | option
+|-----------------------------------------------------------
+| name               | string    | null: false, unique: true
+| email              | string    | null: false, unique: true
+| phone_number       | string    | null: false, unique: true
+| encrypted_password | string    | null: false
+| last_name          | string    | null: false
+| first_name         | string    | null: false
+| last_name_kana     | string    | null: false
+| first_name_kana    | string    | null: false
+| factory__name      | string    | null: false
+| factory_name_kana  | string    | null: false
+| prefecture_id      | integer   | null: false
+
+### association
+- has_many :parts
+- has_many :talk_room
+- has_many :messages
+
+## supplier
+
+| columns              | style     | option
+|-----------------------------------------------------------
+| name                 | string    | null: false, unique: true
+| email                | string    | null: false, unique: true
+| phone_number         | string    | null: false, unique: true
+| encrypted_password   | string    | null: false
+| last_name            | string    | null: false
+| first_name           | string    | null: false
+| last_name_kana       | string    | null: false
+| first_name_kana      | string    | null: false
+| factory__name        | string    | null: false
+| factory_name_kana    | string    | null: false
+| prefecture_id        | integer   | null: false
+
+### association
+- has_many :talk_room
+- has_many :messages
+
+## parts
+
+| columns              | style      | option
+|----------------------------------------------------------
+| name                 | string     | null: false
+| info                 | text       | null: false
+| process_id           | integer    | null: false
+| material_id          | integer    | null: false
+| material_id          | integer    | null: false
+| deadline_id          | integer    | null: false
+| user                 | references | null: false, foreign_key:true
+
+### association
+- belongs_to :buyer
+
+## talk_room
+
+| columns      | style      | option
+|----------------------------------------------------------
+| buyer        | references | null: false foreign_key: true
+| supplier     | references | null: false foreign_key: true
+| comments     | references | null: false foreign_key: true
+
+### association
+- belongs_to :buyer
+- belongs_to :supplier
+- has_many :comments
+
+## comments
+
+| columns      | style      | option
+|----------------------------------------------------------
+| comments     | text       | null: false
+| buyer        | references | null: false foreign_key: true
+| supplier     | references | null: false foreign_key: true
+| talk_room    | references | null: false foreign_key: true
+
+### association
+- belongs_to :talk_room
+- belongs_to :buyer
+- belongs_to :supplier
+
+
 * ローカルでの動作方法
 
 
