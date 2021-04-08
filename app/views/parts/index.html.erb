@@ -1,13 +1,14 @@
 <%= render "shared/header" %>
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">アルバムページのサンプル</h1>
-      <p class="lead text-muted">内容や作成者など、以下のコレクションに関する簡単な説明文を書きましょう。なるべく短く、わかりやすい文にしましょう。しかし短すぎると、友達は見てくれないかもしれません。</p>
+<section class="text-center">
+  <div class="row position-relative">
+  <%= image_tag "https://cdn.pixabay.com/photo/2014/09/13/21/46/milling-444493_960_720.jpg", class:"top-image" %>
+    <div class="col-lg-6 col-md-8 mx-auto position-absolute top-title">
+      <h1 class="app-title">e-supplier</h1>
+      <p class="lead">さあ新しいパートナーを探しましょう</p>
       <p>
-        <a href="#" class="btn btn-primary my-2">メインアクション</a>
-        <a href="#" class="btn btn-secondary my-2">サブアクション</a>
+        <%= link_to  "メーカー、バイヤー様新規登録", "", class: "btn btn-primary my-2" %>
+        <%= link_to "サプライヤー様新規登録", new_supplier_registration_path, class: "btn btn-secondary my-2" %>
       </p>
     </div>
   </div>
