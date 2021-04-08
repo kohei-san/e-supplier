@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<html>
+  <head>
+    <title>e-supplier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <%#= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+    <div class="container">
+    <%= link_to "sample app", '#', id: "logo" %>
+    <nav>
+      <ul class="nav pull-right">
+        <li><%= link_to "Home",    '#' %></li>
+        <li><%= link_to "Help",    '#' %></li>
+        <li><%= link_to "Sign in", '#' %></li>
+      </ul>
+    </nav>
+    <div class="center hero-unit">
+      <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+    </div>
+  </header>
+
+  <main>
+  <div class="container">
+  <%= yield %>
+</div>
+    <section class="text-center">
+      <div>
+        <%= image_tag 'https://cdn.pixabay.com/photo/2014/09/13/21/46/milling-444493_960_720.jpg', class: "img-fluid" %>
+      </div>
+      <div class="header-title">
+        <h1>e-supplier</h1>
+        <p>さあ、新しいパートナーを見つけましょう</p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+              <div class="card-body">
+                <p class="card-text">これは写真の解説文付きのカードです。自然に説明を加えることができます。しかしこの文章は少し長いかもしれません。</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                  </div>
+                  <small class="text-muted">9分</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5" id="featured-3">
+      <h2 class="pb-2 border-bottom">Columns with icons</h2>
+      <div class="row g-5 py-5">
+        <div class="feature col-md-4">
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+          </div>
+          <h2>Featured title</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="#" class="icon-link">
+            Call to action
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5" id="hanging-icons">
+      <h2 class="pb-2 border-bottom">Hanging icons</h2>
+      <div class="row g-5 py-5">
+        <div class="col-md-4 d-flex align-items-start">
+          <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+          </div>
+          <div>
+            <h2>Featured title</h2>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <a href="#" class="btn btn-primary">
+              Primary button
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+    <footer>
+    </footer>     
+   
+  </body>
+</html>
