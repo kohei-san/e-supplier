@@ -10,7 +10,6 @@ class PartsController < ApplicationController
 
   def create
     @part = Part.new(part_params)
-    binding.pry
     if @part.save
       redirect_to root_path
     else
