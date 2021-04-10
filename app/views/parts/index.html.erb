@@ -9,7 +9,7 @@
       <%# ログインするユーザー(buyer/supplier)によって表示を変更する %>
       <% if buyer_signed_in? %>
         <p class="lead my-3"><%= "こんにちは#{current_buyer.name}さん" %></p>
-        <%= link_to "部品を出品する", new_part_path, class:"btn btn-primary" %>
+        <%= link_to "部品を出品する", new_part_path, class:"btn btn-primary mt-1" %>
       <% elsif supplier_signed_in? %>
         <p class="lead"><%= "こんにちは#{current_supplier.name}さん" %></p>
         <%= link_to "新着部品を確認する", new_part_path, class:"btn btn-primary" %>
