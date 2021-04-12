@@ -1,7 +1,7 @@
 class PartsController < ApplicationController
 
   def index
-    
+
   end
 
   def new
@@ -21,7 +21,7 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(:name, :info, :material_id, :processing_id, :deadline_id) #.merge(supplier_id: current_user.id)
+    params.require(:part).permit(:name, :info, :material_id, :processing_id, :deadline_id, :image).merge(buyer_id: current_buyer.id)
     
   end
 end

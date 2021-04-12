@@ -6,7 +6,7 @@ class CreateParts < ActiveRecord::Migration[6.0]
       t.integer     :material_id,   null: false
       t.integer     :processing_id, null: false
       t.integer     :deadline_id,   null: false
-      t.references  :supplier,      foreign_key: true
+      t.references  :buyer,      foreign_key: true
       t.timestamps
     end
   end

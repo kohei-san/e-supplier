@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2021_04_10_054730) do
     t.integer "material_id", null: false
     t.integer "processing_id", null: false
     t.integer "deadline_id", null: false
-    t.bigint "supplier_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["supplier_id"], name: "index_parts_on_supplier_id"
+    t.index ["buyer_id"], name: "index_parts_on_buyer_id"
   end
 
   create_table "suppliers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,5 +90,5 @@ ActiveRecord::Schema.define(version: 2021_04_10_054730) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "parts", "suppliers"
+  add_foreign_key "parts", "buyers"
 end
