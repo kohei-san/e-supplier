@@ -1,0 +1,44 @@
+<%= render "shared/header" %>
+
+<body class="bg-light">
+
+<div class="container pt-5">
+  <div class="d-flex justify-content-center">
+    <div class="form">
+      <%= form_with model: @supplier, url:supplier_session_path , local: true do |f| %>
+        <div class='container text-center mt-5 mb-3'>
+          <h2 class="">
+            Supplier - log in
+          </h2>
+          <p><span class="must-fill">*</span>は必須入力項目です</p>
+          <%# errorメッセージを'shared/error_messages'から引用 %>
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
+
+        <%# 入力フォーム %>
+        <div class="row form-group g-1 mb-3">
+          <div>
+            <label>メールアドレス</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_field :email,class:"form-control", placeholder:"you@example.com", maxlength:"40" %>
+        </div>
+
+        <div class="row form-group g-1 mb-5">
+          <div>
+            <label>パスワード</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_field :password,class:"form-control", minmumlength: "6" %>
+        </div>
+
+        <div class="row mt-4 g-1">
+          <%= f.submit "ログイン" ,class:"btn-outline-primary col-md-6 offset-md-3" %>
+        </div>    
+      <% end %>  
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>
