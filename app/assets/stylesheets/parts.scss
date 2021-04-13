@@ -6,6 +6,22 @@
   text-decoration: none;
 }
 
+.sub-menu {
+  display: none;
+}
+
+.log-in-menu:hover .sub-menu {
+  display: block;
+}
+
+.font-color {
+  color:white
+}
+
+.hover-font-color:hover {
+  color: red;
+}
+
 .top-title {
   top: 40%;
   left: 50%;
@@ -19,9 +35,15 @@
 }
 
 .img-height {
-  height: 30vh;
-  object-fit: cover;
+  height: 40vh;
+  object-fit: contain;
+  background-color: black;
 }
+
+.img-hover:hover {
+  opacity: 0.5;
+}
+
 // 新規登録フォーム
 
 .form {

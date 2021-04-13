@@ -16,8 +16,8 @@
       <% else %>
         <p class="lead">さあ、新しいパートナーを探しましょう</p>
         <p>
-          <%= link_to  "メーカー、バイヤー様新規登録", new_buyer_registration_path, class: "btn btn-primary my-2" %>
-          <%= link_to "サプライヤー様新規登録", new_supplier_registration_path, class: "btn btn-secondary my-2" %>
+          <%= link_to  "メーカー、バイヤー新規登録", new_buyer_registration_path, class: "btn btn-info my-2" %>
+          <%= link_to "サプライヤー新規登録", new_supplier_registration_path, class: "btn btn-warning my-2" %>
         </p>
       <% end %>
     </div>
@@ -26,22 +26,20 @@
 
 <%# 新着部品表示 %>
 <div class="mx-4 py-5">
-  <div class="">
-    <h3 class="fw-bold border-bottom pb-2">New Arrival Parts</h3>
-    <div class="row row-cols-3">
+  <h3 class="fw-bold border-bottom pb-2">New Arrival Parts</h3>
+  <div class="row row-cols-3">
 
-      <% count = 0 %>
-      <% @parts.each do |part| %>
-        <div class="col ">
+    <% count = 0 %>
+    <% @parts.each do |part| %>
+      <div class="col img-hover">
+        <div class="card p-2 my-2 shadow">
           <%= image_tag part.image, class:"card-img-top img-height" %>
-
           <p class="fw-bold pt-1"><%= "#{part.buyer.name}" %></p>
           <p class="fw-bold py-1"><%= "#{part.name}" %></p>
           <% count += 1 %>
-       </div>
-      <% end %>
-    </div>
-    
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
