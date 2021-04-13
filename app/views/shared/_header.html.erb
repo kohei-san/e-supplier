@@ -1,5 +1,5 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header>
+<header class="bg-dark">
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
       <div class="navbar-brand d-flex align-items-center">
@@ -17,8 +17,17 @@
         <% elsif supplier_signed_in? %>
           <%= link_to "ログアウト", destroy_supplier_session_path, method: :delete, class:"link text-white" %>
         <% else %>
-          <%= link_to "メーカー・バイヤーログイン", new_buyer_session_path, class:"link text-white mr-1" %>
-          <%= link_to "サプライヤーログイン", new_supplier_session_path, class:"link text-white" %>
+          <div class="log-in-menu">
+            <span class="navbar-brand text-white fw-bold">Log-in</span>
+            <ul class="sub-menu">
+              <li>
+                <%= link_to "Maker / Buyer", new_buyer_session_path, class:"link font-color hover-font-color" %>
+              </li>
+              <li>
+                <%= link_to "Supplier", new_supplier_session_path, class:"link font-color hover-font-color" %>
+              </li>
+            </ul>
+          </div>
         <% end %>
       </div>
     </div>
