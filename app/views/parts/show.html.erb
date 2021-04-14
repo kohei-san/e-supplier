@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<div class="container">
+  <div class="mt-5 p-4 d-flex justify-content-center parts-show">
+    <%= image_tag @part.image, class:"parts-show-img" %>
+  </div>
+
+  <div class="mt-5">
+    <h6 class="fw-bold border-bottom text-muted mt-4">部品名</h6>
+    <h4><%= @part.name %></h4>
+
+    <h6 class="fw-bold border-bottom text-muted mt-4">会社名</h6>
+    <h4><%= @part.buyer.name %></h4>
+
+    <h6 class="fw-bold border-bottom text-muted mt-4">納期</h6>
+    <h4><%= @part.deadline.name %></h4>
+
+    <h6 class="fw-bold border-bottom text-muted mt-4">素材</h6>
+    <h4><%= @part.material.name %></h4>
+
+    <h6 class="fw-bold border-bottom text-muted mt-4">依頼工程</h6>
+    <h4><%= @part.processing.name %></h4>
+
+    <h6 class="fw-bold border-bottom text-muted mt-4">詳細</h6>
+    <h4><%= @part.info %></h4>
+
+    <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5 d-block m-auto" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

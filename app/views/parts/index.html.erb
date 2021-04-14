@@ -33,12 +33,17 @@
       <% count = 0 %>
       <% @parts.each do |part| %>
         <div class="img-hover swiper-slide">
-          <div class="card p-2 my-2 shadow">
-            <%= image_tag part.image, class:"card-img-top img-height" %>
-            <p class="fw-bold pt-1"><%= "#{part.buyer.name}" %></p>
-            <p class="fw-bold py-1"><%= "#{part.name}" %></p>
-            <% count += 1 %>
-          </div>
+          <%= link_to (part_path(part.id)), class:"link text-dark" do %>
+            <div class="card p-2 my-2 shadow">
+              <%= image_tag part.image, class:"card-img-top img-height" %>
+              <p class="fw-bold pt-1"><%= "#{part.buyer.name}" %></p>
+              <p class="fw-bold py-1"><%= "#{part.name}" %></p>
+              <% count += 1 %>
+              <% if count == 12%>
+                <% break %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
