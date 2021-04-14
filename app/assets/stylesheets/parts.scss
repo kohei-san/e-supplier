@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media screen and (min-width: 1000px){
+  .form{
+    width: 50%;
+  }
+}
+
 .link {
   text-decoration: none;
 }
@@ -74,9 +80,6 @@
 
 // 新規登録フォーム
 
-.form {
-  width: 50%;
-}
 
 .must-fill {
   color: red;

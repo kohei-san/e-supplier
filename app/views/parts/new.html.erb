@@ -22,7 +22,7 @@
               <label class="">名称</label>
               <span class="must-fill">*</span>
             </div>
-            <%= f.text_field :name, class:"form-control", placeholder:"例)自動車用ピストンヘッド", maxlength: "40" %>
+            <%= f.text_field :name, class:"form-control", placeholder:"例)自動車用ピストンヘッド",autofocus: true, maxlength: "40" %>
           </div>
 
           <div class="row my-3 d-flex justify-content-between">
@@ -59,6 +59,7 @@
 
           <div class="">
             <label class="form-label">参考画像</label>
+            <span class="must-fill">*</span>
             <%= f.file_field :image %>
           </div>
 
