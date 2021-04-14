@@ -4,6 +4,10 @@ class PartsController < ApplicationController
     @parts = Part.all
   end
 
+  def show
+    @part = Part.find(params[:id])
+  end
+
   def new
     @part = Part.new
   end

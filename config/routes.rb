@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   devise_for :suppliers
   devise_for :buyers
   root to: "parts#index"
-  resources :parts, only: [:index, :new, :create]
+  resources :parts, only: [:index, :show, :new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
