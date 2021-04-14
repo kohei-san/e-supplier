@@ -21,7 +21,7 @@
             <label>メールアドレス</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_field :email,class:"form-control", placeholder:"you@example.com", maxlength:"40" %>
+          <%= f.text_field :email,class:"form-control", placeholder:"you@example.com",autofocus: true, maxlength:"40" %>
         </div>
 
         <div class="row form-group g-1 mb-5">
@@ -29,7 +29,7 @@
             <label>パスワード</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_field :password,class:"form-control", minmumlength: "6" %>
+          <%= f.password_field :password,class:"form-control", minmumlength: "6" %>
         </div>
 
         <div class="row mt-4 g-1">

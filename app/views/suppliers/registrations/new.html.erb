@@ -21,7 +21,7 @@
             <label class="">ユーザー名</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_field :name, class:"form-control", placeholder:"例) 〇〇社山本", maxlength: "40" %>
+          <%= f.text_field :name, class:"form-control", placeholder:"例) 〇〇社山本",autofocus:true, maxlength: "40" %>
         </div>
 
         <div class="row form-group g-1 mb-3">
@@ -37,7 +37,7 @@
             <label>パスワード(半角の英字と数字を含めて６文字以上で設定してください)</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_field :password,class:"form-control", minmumlength: "6" %>
+          <%= f.password_field :password,class:"form-control", minmumlength: "6" %>
         </div>
 
         <div class="row form-group g-1 mb-3">
@@ -45,7 +45,7 @@
             <label>パスワード(確認)</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_field :password_confirmation,class:"form-control" , minmumlength: "6" %>
+          <%= f.password_field :password_confirmation,class:"form-control" , minmumlength: "6" %>
         </div>
 
         <div class="row form-group g-1 mb-3">
@@ -93,36 +93,37 @@
         <div class="row form-inline g-1 mb-3">
           <div class="col form-group">
             <div>
-              <label>会社名 (全角)</label>
+              <label>会社名</label>
               <span class="must-fill">*</span>
             </div>
-            <%= f.text_field :company_name, class:"form-control" , placeholder:"例)株式会社山田精工" , maxlength: "20" %>
+            <%= f.text_field :company_name, class:"form-control" , placeholder:"例)株式会社山本精工" , maxlength: "20" %>
           </div>
           <div class="col form-group">
             <div>
               <label>会社名 カナ (全角)</label>
               <span class="must-fill">*</span>
             </div>
-            <%= f.text_field :company_name_kana, class:"form-control" ,placeholder:"例)カブシキガイシャヤマダセイコウ" , maxlength: "20" %>
-          </div>
-          <div class="col-lg-2">
-            <label for="inputState" class="form-label">都道府県</label>
-            <span class="must-fill">*</span>
-            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:""}) %>
+            <%= f.text_field :company_name_kana, class:"form-control" ,placeholder:"例)カブシキガイシャヤマモトセイコウ" , maxlength: "20" %>
           </div>
         </div>
 
-        <div class="row form-group g-1 mb-3">
+        <div class="form-group g-1 mt-4 mb-3">
+          <label for="inputState" class="form-label">都道府県</label>
+          <span class="must-fill">*</span>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:""}) %>
+        </div>
+
+        <div class="row form-group g-1 mb-4">
           <div>
             <label>プロフィール(PR等)</label>
-            <span class="must-fill"></span>
+            <span class="must-fill">*</span>
           </div>
           <%= f.text_area :profile, placeholder:"1000字以内でご記入ください。", class:"form-control" , maxlength: "1000" %>
         </div>
 
-        <div class="row mt-4 g-1">
-          <%= f.submit "会員登録" ,class:"btn-outline-primary col-md-6 offset-md-3" %>
-        </div>    
+        <div class="row mx-auto">
+          <%= f.submit "会員登録" ,class:"btn-primary" %>
+        </div>      
       <% end %>  
     </div>
   </div>
