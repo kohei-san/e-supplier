@@ -94,9 +94,9 @@ GoogleMap表示機能
 | name                 | string     | null: false
 | info                 | text       | null: false
 | material_id          | integer    | null: false
-| process_id           | integer    | null: false
+| processing_id           | integer    | null: false
 | deadline_id          | integer    | null: false
-| supplier             | references | null: false, foreign_key:true
+| buyer             | references | null: false, foreign_key:true
 
 ### association
 - belongs_to :buyer
