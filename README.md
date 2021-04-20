@@ -1,4 +1,4 @@
-# NewSupplier
+# e-supplier
 
 * アプリケーション概要
 
@@ -10,8 +10,11 @@
 
 
 * URL
+https://shrouded-forest-16187.herokuapp.com/
 
 * テスト用アカウント
+
+
 
 * 利用方法
 

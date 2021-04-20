@@ -12,3 +12,7 @@ def parts_create
 end
 
 parts_create
+
+def buyer_create
+  buyer = Buyer.
+end
