@@ -5,9 +5,7 @@ class Processing < ActiveHash::Base
     {id: 2, name: '切削'},
     {id: 3, name: '表面処理'},
     {id: 4, name: '熱処理'},
-    {id: 5, name: '##'},
-    {id: 6, name: '##'},
-    {id: 7, name: 'その他'}
+    {id: 5, name: 'その他'}
   ]
 
   include ActiveHash::Associations

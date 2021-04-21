@@ -1,6 +1,11 @@
-# NewSupplier
+# e-supplier
 
-* アプリケーション概要
+## アプリケーション概要
+
+ご覧いただきありがとうございます。
+アプリケーション概要を簡単にスライドにまとめました。よければご覧ください。
+https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJAkE/edit?usp=sharing
+
 
 ものづくりを行うメーカー、その購買担当者が新たなサプライヤーを発見することをサポートするためのアプリケーションです。
 また、サプライヤーがメーカーにPRすることもできます。
@@ -9,13 +14,16 @@
 （守秘義務の関係から、図面などの情報はメッセージにて送付するものと考えています。）
 
 
-* URL
+## URL
+https://shrouded-forest-16187.herokuapp.com/
 
-* テスト用アカウント
+## テスト用アカウント
 
-* 利用方法
 
-* 目指した課題解決
+
+## 利用方法
+
+## 目指した課題解決
 
 「日本のものづくり」が強くするにはどうすれば良いかを考え、このアプリを制作し始めました。
 
@@ -25,7 +33,7 @@
 
 国内でよりオープンに購買、調達を行うことができれば、各サプライヤーの競争力や技術も向上し「日本のものづくり」が強くなると考えました。
 
-* 洗い出した要件定義
+## 洗い出した要件定義
 
 ユーザー登録機能  
 部品出品機能  
@@ -35,14 +43,14 @@
 ユーザープロフィール表示機能  
 
 
-* 実装した機能についての画像、Gif、説明
+## 実装した機能についての画像、Gif、説明
 
-* 実装予定の機能
+## 実装予定の機能
 
 お気に入り登録機能  
 GoogleMap表示機能
 
-* データベース設計
+## データベース設計
 
 ## buyer
 
@@ -94,9 +102,9 @@ GoogleMap表示機能
 | name                 | string     | null: false
 | info                 | text       | null: false
 | material_id          | integer    | null: false
-| process_id           | integer    | null: false
+| processing_id           | integer    | null: false
 | deadline_id          | integer    | null: false
-| supplier             | references | null: false, foreign_key:true
+| buyer             | references | null: false, foreign_key:true
 
 ### association
 - belongs_to :buyer
