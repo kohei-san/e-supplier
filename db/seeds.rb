@@ -34,7 +34,7 @@ def parts_create
   part_2.image.attach(io: File.open("./app/assets/images/test_2.jpeg"),filename: 'test_2.jpeg')
   sleep 1
 
-  part_3 = Part.create({ name: "マシニング加工品複数", info:"まずは貴社の得意な形状、サイズ等を教えてください。お願いできそうな図面をいくつか見積もり願います。", material_id: 2, processing_id: 2, deadline_id: 6, buyer_id: @buyer_1.id}).id
+  part_3 = Part.create({ name: "マシニング加工品複数", info:"まずは貴社の得意な形状、サイズ等を教えてください。お願いできそうな図面をいくつか見積もり願います。", material_id: 2, processing_id: 2, deadline_id: 6, buyer_id: @buyer_1.id})
   part_3.image.attach(io: File.open("./app/assets/images/test_3.jpeg"),filename: 'test_3.jpeg')
   sleep 1
 
