@@ -1,7 +1,7 @@
 class PartsController < ApplicationController
 
   def index
-    @parts = Part.all
+    @parts = Part.order("created_at DESC")
   end
 
   def show
