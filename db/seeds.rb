@@ -8,8 +8,8 @@
 
 
 def buyer_create
-  @buyer_1 = Buyer.create({ email: "buyer1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "二菱重工株式会社", company_name_kana: "ニツビシジュウコウ", prefecture_id: 28, profile: "start your impossible"})
-  @buyer_2 = Buyer.create({ email: "buyer2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "トコタ自動車株式会社", company_name_kana: "トコタジドウシャ", prefecture_id:23 , profile: "move the world for what?"})
+  @buyer_1 = Buyer.create({ email: "buyer1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "二菱重工株式会社", company_name_kana: "ニツビシジュウコウ", prefecture_id: 28, profile: "move the world for what?"})
+  @buyer_2 = Buyer.create({ email: "buyer2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "トコタ自動車株式会社", company_name_kana: "トコタジドウシャ", prefecture_id:23 , profile: "start your impossible"})
   @buyer_3 = Buyer.create({ email: "buyer3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "株式会社メブテスコ", company_name_kana: "メブテスコ", prefecture_id: 28, profile: "動かすと、止まらない"})
   @buyer_4 = Buyer.create({ email: "buyer4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "株式会社ヤンボー", company_name_kana: "ヤンボー", prefecture_id: 28, profile: "君の名前はヤンボー"})
 end
