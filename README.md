@@ -56,7 +56,6 @@ GoogleMap表示機能
 
 | columns            | style     | option
 |-----------------------------------------------------------
-| name               | string    | null: false, unique: true
 | email              | string    | null: false, unique: true
 | phone_number       | string    | null: false, unique: true
 | encrypted_password | string    | null: false
@@ -78,7 +77,6 @@ GoogleMap表示機能
 
 | columns              | style     | option
 |-----------------------------------------------------------
-| name                 | string    | null: false, unique: true
 | email                | string    | null: false, unique: true
 | phone_number         | string    | null: false, unique: true
 | encrypted_password   | string    | null: false
@@ -86,8 +84,8 @@ GoogleMap表示機能
 | first_name           | string    | null: false
 | last_name_kana       | string    | null: false
 | first_name_kana      | string    | null: false
-| factory_name         | string    | null: false
-| factory_name_kana    | string    | null: false
+| company_name         | string    | null: false
+| company_name_kana    | string    | null: false
 | prefecture_id        | integer   | null: false
 | profile              | text      | null: false
 

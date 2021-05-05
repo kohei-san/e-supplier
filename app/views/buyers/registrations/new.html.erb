@@ -6,7 +6,7 @@
   <div class="d-flex justify-content-center">
     <div class="form">
       <%= form_with model: @buyer, url: buyer_registration_path, local: true do |f| %>
-        <div class='container text-center mt-5 mb-3'>
+        <div class="container text-center my-5">
           <h2 class="fw-bold">
             メーカー・バイヤー新規登録
           </h2>
@@ -16,12 +16,21 @@
         </div>
 
         <%# 入力フォーム %>
-        <div class="row form-group g-1 mb-3">
-          <div>
-            <label class="">ユーザー名</label>
-            <span class="must-fill">*</span>
+        <div class="row form-inline g-1 mb-3">
+          <div class="col form-group">
+            <div>
+              <label>会社名</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :company_name, class:"form-control" , autofocus: true, placeholder:"例)株式会社山本精工" , maxlength: "20" %>
           </div>
-          <%= f.text_field :name, class:"form-control", placeholder:"例) 〇〇社山本",autofocus: true, maxlength: "40" %>
+          <div class="col form-group">
+            <div>
+              <label>会社名 カナ (全角)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :company_name_kana, class:"form-control" ,placeholder:"例)カブシキガイシャヤマモトセイコウ" , maxlength: "20" %>
+          </div>
         </div>
 
         <div class="row form-group g-1 mb-3">
@@ -90,25 +99,9 @@
           </div>
         </div>
 
-        <div class="row form-inline g-1 mb-3">
-          <div class="col form-group">
-            <div>
-              <label>会社名</label>
-              <span class="must-fill">*</span>
-            </div>
-            <%= f.text_field :company_name, class:"form-control" , placeholder:"例)株式会社山本精工" , maxlength: "20" %>
-          </div>
-          <div class="col form-group">
-            <div>
-              <label>会社名 カナ (全角)</label>
-              <span class="must-fill">*</span>
-            </div>
-            <%= f.text_field :company_name_kana, class:"form-control" ,placeholder:"例)カブシキガイシャヤマモトセイコウ" , maxlength: "20" %>
-          </div>
-        </div>
 
         <div class="form-group g-1 mt-4 mb-3">
-          <label for="inputState" class="form-label">都道府県</label>
+          <label for="inputState" class="form-label">会社所在地</label>
           <span class="must-fill">*</span>
           <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:""}) %>
         </div>

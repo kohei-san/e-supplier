@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<div class="container">
+  <div class="buyer-photo">
+
+  </div>
+
+  <div class="my-5 buyer-show-layout">
+    <div class="profile m-2">
+        <h6 class="fw-bold border-bottom text-muted mt-4">会社名</h6>
+        <h4><%= @buyer.company_name %></h4>
+
+        <h6 class="fw-bold border-bottom text-muted mt-4">担当者名</h6>
+        <h4><%= @buyer.last_name %></h4>
+
+        <h6 class="fw-bold border-bottom text-muted mt-4">詳細情報等</h6>
+        <h4><%= @buyer.profile %></h4>
+    </div>
+
+    <div class="m-2" id="map">
+    </div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAPS_ESUPPLIER"]%>&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+  </div>
+
+  <div>
+    <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5 d-block m-auto" %>
+  </div>
+
+<%= render "shared/footer" %>
