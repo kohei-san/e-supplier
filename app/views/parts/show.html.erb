@@ -6,11 +6,11 @@
   </div>
 
   <div class="mt-5">
+    <h6 class="fw-bold border-bottom text-muted mt-4">会社名</h6>
+    <h4><%= link_to "#{@part.buyer.company_name}", buyer_path(@part.buyer.id), class: "link" %></h4>
+
     <h6 class="fw-bold border-bottom text-muted mt-4">部品名</h6>
     <h4><%= @part.name %></h4>
-
-    <h6 class="fw-bold border-bottom text-muted mt-4">会社名</h6>
-    <h4><%= @part.buyer.company_name %></h4>
 
     <h6 class="fw-bold border-bottom text-muted mt-4">納期</h6>
     <h4><%= @part.deadline.name %></h4>
