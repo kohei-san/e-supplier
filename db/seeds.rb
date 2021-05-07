@@ -9,6 +9,7 @@
 
 def buyer_create
   @buyer_1 = Buyer.create({ email: "buyer1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_1", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
+  @buyer_1.image.attach(io: File.open("./app/assets/images/test_1.jpeg"),filename: 'test_1.jpeg')
   @buyer_2 = Buyer.create({ email: "buyer2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_2", company_name_kana: "テストバイヤー", prefecture_id: 23, profile: "This is test_buyer_profile."})
   @buyer_3 = Buyer.create({ email: "buyer3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_3", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
   @buyer_4 = Buyer.create({ email: "buyer4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_4", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
