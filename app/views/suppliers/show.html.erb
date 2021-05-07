@@ -2,23 +2,23 @@
 
 <div class="container">
   <div class="py-3">
-    <% if @buyer.image.attached? %>
-      <%= image_tag @buyer.image, class:"card-img-top buyer-photo" %>
+    <% if @supplier.image.attached? %>
+      <%= image_tag @supplier.image, class:"card-img-top buyer-photo"  %>
     <% else %>
       <%= image_tag "no_image.png", class:"card-img-top buyer-photo" %>
     <% end %>
   </div>
 
-  <div class="my-2 buyer-show-layout">
+  <div class="my-3 buyer-show-layout">
     <div class="profile m-2">
         <h6 class="fw-bold border-bottom text-muted mt-4">会社名</h6>
-        <h4><%= @buyer.company_name %></h4>
+        <h4><%= @supplier.company_name %></h4>
 
         <h6 class="fw-bold border-bottom text-muted mt-4">担当者名</h6>
-        <h4><%= @buyer.last_name %></h4>
+        <h4><%= @supplier.last_name %></h4>
 
         <h6 class="fw-bold border-bottom text-muted mt-4">詳細情報等</h6>
-        <h4><%= @buyer.profile %></h4>
+        <h4><%= @supplier.profile %></h4>
     </div>
 
     <div class="m-2" id="map">
