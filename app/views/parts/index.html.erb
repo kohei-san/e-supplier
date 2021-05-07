@@ -105,9 +105,7 @@
         <%= "#{supplier.created_at}" %><span>:</span>
       </li>
       <li class="list-unstyled">
-         <%# リンク先要編集%>
-        <%= link_to "#{supplier.company_name}", buyer_path(supplier.id), class:"link" %>
-         <%# リンク先要編集%>
+        <%= link_to "#{supplier.company_name}", supplier_path(supplier.id), class:"link" %>
         <span>が登録されました。</span>
       </li>
     </ul>
