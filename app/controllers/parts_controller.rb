@@ -2,6 +2,8 @@ class PartsController < ApplicationController
 
   def index
     @parts = Part.order("created_at DESC")
+    @buyers = Buyer.order("created_at DESC")
+    @suppliers = Supplier.order("created_at DESC")
   end
 
   def show
