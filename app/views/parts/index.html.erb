@@ -14,7 +14,7 @@
       <% elsif supplier_signed_in? %>
         <p class="lead mt-3">こんにちは！</p>
         <p class="lead"><%= "#{current_supplier.company_name}、#{current_supplier.last_name}さん" %></p>
-        <%= link_to "新着部品を確認する", new_part_path, class:"btn btn-primary" %>
+        <%= link_to "新着部品を確認する", root_path, class:"btn btn-primary" %>
       <% else %>
         <p class="lead">さあ、新しいパートナーを探しましょう</p>
         <p>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :suppliers
-  devise_for :buyers, controllers: { sessions: 'buyers/sessions'}
+  devise_for :buyers
   root to: "parts#index"
   resources :parts, only: [:index, :show, :new, :create]
   resources :buyers, only: :show
