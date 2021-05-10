@@ -1,4 +1,7 @@
 class PartsController < ApplicationController
+  before_action :authenticate_buyer!, except: [:index, :show]
+  before_action :find_by_id, only: [:show, :edit, :update, :destroy]
+  before_action :owner_only, only: [:edit, :update, :destroy]
 
   def index
     @parts = Part.order("created_at DESC")
@@ -7,7 +10,6 @@ class PartsController < ApplicationController
   end
 
   def show
-    @part = Part.find(params[:id])
   end
 
   def new
@@ -23,8 +25,32 @@ class PartsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @part.update(part_params)
+      redirect_to root_path
+    end
+  end
+
+  def destroy
+    if @part.destroy
+      redirect_to root_path
+    end
+  end
 
   private
+
+  def find_by_id
+    @part = Part.find(params[:id])
+  end
+
+  def owner_only
+    if current_buyer.id != @part.buyer_id
+      redirect_to root_path
+    end
+  end
 
   def part_params
     params.require(:part).permit(:name, :info, :material_id, :processing_id, :deadline_id, :image).merge(buyer_id: current_buyer.id)

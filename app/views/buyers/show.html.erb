@@ -32,8 +32,12 @@
 
   </div>
 
-  <div>
-    <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5 d-block m-auto" %>
-  </div>
+  <% if supplier_signed_in? %>
+    <div>
+      <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5 d-block m-auto" %>
+    </div>
+  <% elsif buyer_signed_in? && current_buyer.id == @buyer.id %>
+    <%= link_to "プロフィール編集", edit_buyer_registration_path, class:"btn btn-primary my-5 d-block m-auto" %>
+  <% end %>
 
 <%= render "shared/footer" %>

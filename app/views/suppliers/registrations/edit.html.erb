@@ -1,0 +1,118 @@
+<%= render "shared/header" %>
+
+<body class="bg-light">
+
+<div class="container pt-5">
+  <div class="d-flex justify-content-center">
+    <div class="form">
+      <%= form_with model: @supplier, url: supplier_registration_path, local: true do |f| %>
+        <div class="container text-center my-5">
+          <h2 class="fw-bold">
+            メーカー・バイヤー登録情報編集
+          </h2>
+          <p><span class="must-fill">*</span>は必須入力項目です</p>
+          <%# errorメッセージを'shared/error_messages'から引用 %>
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
+
+        <%# 入力フォーム %>
+        <div class="row form-inline g-1 mb-3">
+          <div class="col form-group">
+            <div>
+              <label>会社名</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :company_name, class:"form-control" , autofocus: true, placeholder:"例)株式会社山本精工" , maxlength: "20" %>
+          </div>
+          <div class="col form-group">
+            <div>
+              <label>会社名 カナ (全角)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :company_name_kana, class:"form-control" ,placeholder:"例)カブシキガイシャヤマモトセイコウ" , maxlength: "20" %>
+          </div>
+        </div>
+
+        <div class="row form-group g-1 mb-3">
+          <div>
+            <label>メールアドレス</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_field :email,class:"form-control", placeholder:"you@example.com", maxlength:"40" %>
+        </div>
+
+        <div class="row form-group g-1 mb-3">
+          <div>
+            <label>パスワード(変更にはパスワードが必要です)</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.password_field :current_password,class:"form-control", minmumlength: "6" %>
+        </div>
+
+        <div class="row form-group g-1 mb-3">
+          <div>
+            <label>電話番号 (半角数字のみで入力ください)</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_field :phone_number, class:"form-control", placeholder:"00011112222" , maxlength: "11" %>
+        </div>
+
+        <div class="row form-inline g-1 mb-3">
+          <div class="col form-group">
+            <div>
+              <label>姓 (last name)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :last_name, class:"form-control" , placeholder:"例)山田" , maxlength: "20" %>
+          </div>
+          <div class="col form-group">
+            <div>
+              <label>名 (first name)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :first_name, class:"form-control" ,placeholder:"例)太郎" , maxlength: "20" %>
+          </div>
+        </div>
+
+        <div class="row form-inline g-1 mb-3">
+          <div class="col form-group">
+            <div>
+              <label>姓 カナ (last name)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :last_name_kana, class:"form-control" , placeholder:"例)ヤマダ" , maxlength: "20" %>
+          </div>
+          <div class="col form-group">
+            <div>
+              <label>名 カナ (first name)</label>
+              <span class="must-fill">*</span>
+            </div>
+            <%= f.text_field :first_name_kana, class:"form-control" ,placeholder:"例)タロウ" , maxlength: "20" %>
+          </div>
+        </div>
+
+
+        <div class="form-group g-1 mt-4 mb-3">
+          <label for="inputState" class="form-label">会社所在地</label>
+          <span class="must-fill">*</span>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:""}) %>
+        </div>
+
+        <div class="row form-group g-1 mb-4">
+          <div>
+            <label>プロフィール(PR等)</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_area :profile, placeholder:"1000字以内でご記入ください。", class:"form-control" , maxlength: "1000" %>
+        </div>
+
+        <div class="row mx-auto">
+          <%= f.submit "編集" ,class:"btn-primary" %>
+        </div>    
+      <% end %>  
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>
