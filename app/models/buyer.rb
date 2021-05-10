@@ -13,7 +13,7 @@ class Buyer < ApplicationRecord
     validates :first_name_kana,   format: {with: /\A[ァ-ヴー]+\z/}
     validates :phone_number,      numericality: { only_integer: true }, length: { maximum: 11 }
     validates :prefecture_id,     numericality: { other_than: 0 }
-    validates :profile
+    validates :address
   end
 
   has_many :parts
