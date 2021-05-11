@@ -107,15 +107,15 @@
         
         <div class="row form-group g-1 mb-4">
           <div>
-            <label>プロフィール(PR等)</label>
+            <label>住所</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.text_area :address, placeholder:"1000字以内でご記入ください。", class:"form-control" , maxlength: "1000" %>
+          <%= f.text_field :address, placeholder:"", class:"form-control" , maxlength: "100" %>
         </div>
 
-        <div class="row mx-auto">
-          <%= f.submit "会員登録" ,class:"btn-primary" %>
-        </div>      
+        <div class="row m-auto">
+          <%= f.submit "会員登録" ,class:"btn-outline-primary btn" %>
+        </div>    
       <% end %>  
     </div>
   </div>
