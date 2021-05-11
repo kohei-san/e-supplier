@@ -87,22 +87,22 @@ GoogleMapAPIを使用してユーザーの住所表示
 
 ## buyer
 
-| columns            | style     | option
-|-----------------------------------------------------------
-| email              | string    | null: false, unique: true
-| phone_number       | string    | null: false, unique: true
-| encrypted_password | string    | null: false
-| last_name          | string    | null: false
-| first_name         | string    | null: false
-| last_name_kana     | string    | null: false
-| first_name_kana    | string    | null: false
-| company_name       | string    | null: false
-| company_name_kana  | string    | null: false
-| prefecture_id      | integer   | null: false
-| profile            | text      | 
-| address            | string    | null: false
-| latitude           | float     |
-| longitude          | float     |
+| columns            | style     | option                      <br>
+|----------------------------------------------------------- <br>
+| email              | string    | null: false, unique: true <br>
+| phone_number       | string    | null: false, unique: true <br>
+| encrypted_password | string    | null: false <br>
+| last_name          | string    | null: false <br>
+| first_name         | string    | null: false <br>
+| last_name_kana     | string    | null: false <br>
+| first_name_kana    | string    | null: false <br>
+| company_name       | string    | null: false <br>
+| company_name_kana  | string    | null: false <br>
+| prefecture_id      | integer   | null: false <br>
+| profile            | text      |  <br>
+| address            | string    | null: false <br>
+| latitude           | float     | <br>
+| longitude          | float     | <br>
 
 ### association
 - has_many :parts
@@ -111,22 +111,22 @@ GoogleMapAPIを使用してユーザーの住所表示
 
 ## supplier
 
-| columns              | style     | option
-|-----------------------------------------------------------
-| email                | string    | null: false, unique: true
-| phone_number         | string    | null: false, unique: true
-| encrypted_password   | string    | null: false
-| last_name            | string    | null: false
-| first_name           | string    | null: false
-| last_name_kana       | string    | null: false
-| first_name_kana      | string    | null: false
-| company_name         | string    | null: false
-| company_name_kana    | string    | null: false
-| prefecture_id        | integer   | null: false
-| profile              | text      | 
-| address              | string    | null: false
-| latitude             | float     |
-| longitude            | float     |
+| columns              | style     | option <br>
+|----------------------------------------------------------- <br>
+| email                | string    | null: false, unique: true <br>
+| phone_number         | string    | null: false, unique: true <br>
+| encrypted_password   | string    | null: false <br>
+| last_name            | string    | null: false <br>
+| first_name           | string    | null: false <br>
+| last_name_kana       | string    | null: false <br>
+| first_name_kana      | string    | null: false <br>
+| company_name         | string    | null: false <br>
+| company_name_kana    | string    | null: false <br>
+| prefecture_id        | integer   | null: false <br>
+| profile              | text      |  <br>
+| address              | string    | null: false <br>
+| latitude             | float     | <br>
+| longitude            | float     | <br>
 
 
 ### association
@@ -135,24 +135,24 @@ GoogleMapAPIを使用してユーザーの住所表示
 
 ## parts
 
-| columns              | style      | option
-|----------------------------------------------------------
-| name                 | string     | null: false
-| info                 | text       | null: false
-| material_id          | integer    | null: false
-| processing_id        | integer    | null: false
-| deadline_id          | integer    | null: false
-| buyer                | references | null: false, foreign_key:true
+| columns              | style      | option <br>
+|---------------------------------------------------------- <br>
+| name                 | string     | null: false <br>
+| info                 | text       | null: false <br>
+| material_id          | integer    | null: false <br>
+| processing_id        | integer    | null: false <br>
+| deadline_id          | integer    | null: false <br>
+| buyer                | references | null: false, foreign_key:true <br>
 
 ### association
 - belongs_to :buyer
 
 ## talk_room
 
-| columns      | style      | option
-|----------------------------------------------------------
-| buyer        | references | null: false foreign_key: true
-| supplier     | references | null: false foreign_key: true
+| columns      | style      | option <br>
+|---------------------------------------------------------- <br>
+| buyer        | references | null: false foreign_key: true <br>
+| supplier     | references | null: false foreign_key: true <br>
 
 ### association
 - belongs_to :buyer
@@ -161,12 +161,12 @@ GoogleMapAPIを使用してユーザーの住所表示
 
 ## comments
 
-| columns      | style      | option
-|----------------------------------------------------------
-| comments     | text       | null: false
-| buyer        | references | null: false foreign_key: true
-| supplier     | references | null: false foreign_key: true
-| talk_room    | references | null: false foreign_key: true
+| columns      | style      | option <br>
+|---------------------------------------------------------- <br>
+| comments     | text       | null: false <br>
+| buyer        | references | null: false foreign_key: true <br>
+| supplier     | references | null: false foreign_key: true <br>
+| talk_room    | references | null: false foreign_key: true <br>
 
 ### association
 - belongs_to :talk_room
