@@ -8,19 +8,19 @@
 
 
 def buyer_create
-  @buyer_1 = Buyer.create({ email: "buyer1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_1", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
-  @buyer_2 = Buyer.create({ email: "buyer2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_2", company_name_kana: "テストバイヤー", prefecture_id: 23, profile: "This is test_buyer_profile."})
-  @buyer_3 = Buyer.create({ email: "buyer3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_3", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
-  @buyer_4 = Buyer.create({ email: "buyer4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_4", company_name_kana: "テストバイヤー", prefecture_id: 28, profile: "This is test_buyer_profile."})
+  @buyer_1 = Buyer.create({ email: "buyer1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_1", company_name_kana: "テストバイヤー", prefecture_id: 28, address: "西宮市甲子園町1-82",profile: "This is test_buyer_profile."})
+  @buyer_2 = Buyer.create({ email: "buyer2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_2", company_name_kana: "テストバイヤー", prefecture_id: 28, address: "西宮市甲子園八番町1-100",profile: "This is test_buyer_profile."})
+  @buyer_3 = Buyer.create({ email: "buyer3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_3", company_name_kana: "テストバイヤー", prefecture_id: 27, address: "大阪市此花区桜島2丁目1-33",profile: "This is test_buyer_profile."})
+  @buyer_4 = Buyer.create({ email: "buyer4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_buyer_4", company_name_kana: "テストバイヤー", prefecture_id: 12, address: "浦安市舞浜1-1",profile: "This is test_buyer_profile."})
 end
 
 buyer_create
 
 def supplier_create
-  @supplier_1 = Supplier.create({ email: "supplier1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_1", company_name_kana: "テストサプライヤー", prefecture_id: 28, profile: "This is test_supplier_profile."})
-  @supplier_2 = Supplier.create({ email: "supplier2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_2", company_name_kana: "テストサプライヤー", prefecture_id: 23, profile: "This is test_supplier_profile."})
-  @supplier_3 = Supplier.create({ email: "supplier3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_3", company_name_kana: "テストサプライヤー", prefecture_id: 28, profile: "This is test_supplier_profile."})
-  @supplier_4 = Supplier.create({ email: "supplier4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_4", company_name_kana: "テストサプライヤー", prefecture_id: 28, profile: "This is test_supplier_profile."})
+  @supplier_1 = Supplier.create({ email: "supplier1@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_1", company_name_kana: "テストサプライヤー", prefecture_id: 28, address: "西宮市高松町14-2",profile: "This is test_supplier_profile."})
+  @supplier_2 = Supplier.create({ email: "supplier2@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_2", company_name_kana: "テストサプライヤー", prefecture_id: 28, address: "神戸市中央区港島南町7丁目1-9",profile: "This is test_supplier_profile."})
+  @supplier_3 = Supplier.create({ email: "supplier3@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_3", company_name_kana: "テストサプライヤー", prefecture_id: 27, address: "大阪市中央区道頓堀1丁目",profile: "This is test_supplier_profile."})
+  @supplier_4 = Supplier.create({ email: "supplier4@com", phone_number: 1112223344, password: "a111111", last_name: "山本", first_name: "太郎", last_name_kana: "ヤマモト", first_name_kana: "タロウ", company_name: "test_supplier_4", company_name_kana: "テストサプライヤー", prefecture_id: 27, address: "大阪市浪速区恵美須東1丁目18-6",profile: "This is test_supplier_profile."})
 end
 
 supplier_create

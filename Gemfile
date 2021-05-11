@@ -61,3 +61,5 @@ gem 'devise'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'aws-sdk-s3', require: false
+gem 'gon'
+gem 'geocoder'

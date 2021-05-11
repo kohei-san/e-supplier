@@ -22,7 +22,7 @@
               <label>会社名</label>
               <span class="must-fill">*</span>
             </div>
-            <%= f.text_field :company_name, class:"form-control" , autofocus: true, placeholder:"例)株式会社山本精工" , maxlength: "20" %>
+            <%= f.text_field :company_name, class:"form-control", placeholder:"例)株式会社山本精工" , maxlength: "20" %>
           </div>
           <div class="col form-group">
             <div>
@@ -43,10 +43,10 @@
 
         <div class="row form-group g-1 mb-3">
           <div>
-            <label>パスワード(変更にはパスワードが必要です)</label>
+            <label class="must-fill">パスワード(変更にはパスワードが必要です)</label>
             <span class="must-fill">*</span>
           </div>
-          <%= f.password_field :current_password,class:"form-control", minmumlength: "6" %>
+          <%= f.password_field :current_password, class:"form-control", autofocus: true, minmumlength: "6" %>
         </div>
 
         <div class="row form-group g-1 mb-3">
@@ -100,15 +100,22 @@
 
         <div class="row form-group g-1 mb-4">
           <div>
-            <label>プロフィール(PR等)</label>
+            <label>住所</label>
             <span class="must-fill">*</span>
+          </div>
+          <%= f.text_field :address, placeholder:"", class:"form-control" , maxlength: "100" %>
+        </div>
+
+        <div class="row form-group g-1 mb-4">
+          <div>
+            <label>プロフィール(PR等)</label>
           </div>
           <%= f.text_area :profile, placeholder:"1000字以内でご記入ください。", class:"form-control" , maxlength: "1000" %>
         </div>
 
-        <div class="row mx-auto">
-          <%= f.submit "編集" ,class:"btn-primary" %>
-        </div>    
+        <div class="row m-auto">
+          <%= f.submit "編集" ,class:"btn-outline-primary btn" %>
+        </div>   
       <% end %>  
     </div>
   </div>

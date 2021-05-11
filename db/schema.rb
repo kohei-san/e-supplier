@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_054730) do
+ActiveRecord::Schema.define(version: 2021_05_10_143549) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,12 +44,15 @@ ActiveRecord::Schema.define(version: 2021_04_10_054730) do
     t.string "company_name", null: false
     t.string "company_name_kana", null: false
     t.integer "prefecture_id", null: false
-    t.text "profile", null: false
+    t.text "profile"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_buyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
   end
@@ -77,12 +80,15 @@ ActiveRecord::Schema.define(version: 2021_04_10_054730) do
     t.string "company_name", null: false
     t.string "company_name_kana", null: false
     t.integer "prefecture_id", null: false
-    t.text "profile", null: false
+    t.text "profile"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_suppliers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
   end

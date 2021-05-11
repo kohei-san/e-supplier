@@ -25,9 +25,9 @@
     <h4><%= @part.info %></h4>
 
     <% if supplier_signed_in? %>
-      <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5 d-block m-auto" %>
+      <%= link_to "出品者に問い合わせる", root_path, class:"btn btn-primary my-5" %>
     <% elsif buyer_signed_in? && current_buyer.id == @part.buyer_id %>
-      <%= link_to "削除", part_path(@part.id), method: :delete, class: "btn btn-primary my-5 d-block m-auto"  %>
+      <%= link_to "削除", part_path(@part.id), method: :delete, class: "btn btn-primary my-5"  %>
     <% end %>
   
   </div>
