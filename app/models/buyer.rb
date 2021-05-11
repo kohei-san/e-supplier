@@ -18,6 +18,9 @@ class Buyer < ApplicationRecord
 
   has_many :parts
   has_one_attached :image
+  
+  geocoded_by :address
+  after_validation :geocode
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
