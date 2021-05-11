@@ -3,10 +3,6 @@
 ## アプリケーション概要
 
 ご覧いただきありがとうございます。
-アプリケーション概要を簡単にスライドにまとめました。よければご覧ください。<br>
-
-https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJAkE/edit?usp=sharing
-
 
 ものづくりを行うメーカー、その購買担当者が新たにサプライヤーを発見することをサポートするためのアプリケーションです。<br>
 また、サプライヤーがメーカーにPRすることもできます。
@@ -14,9 +10,14 @@ https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJ
 メーカーは制作を依頼したい部品を出品し。サプライヤーはメーカーにメッセージを送ることで部品制作の見積もりに立候補します。
 （守秘義務の関係から、図面などの情報はメッセージにて送付するものと考えています。）
 
+アプリケーション概要などを短いスライドにまとめました。ご覧いただけると幸いです。<br>
+
+https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJAkE/edit?usp=sharing
+
+
 
 ## URL
-http://35.72.86.30:3000/
+http://35.72.86.30/
 
 ドメイン取得予定
 
@@ -55,22 +56,32 @@ password:   a111111
 
 国内でよりオープンに購買、調達を行うことができれば、各サプライヤーの競争力や技術も向上し「日本のものづくり」が強くなると考えました。
 
-## 洗い出した要件定義
+## 要件定義
 
-ユーザー登録機能  
+ユーザー登録機能 (buyer, supplier)
 部品出品機能  
 出品部品、編集、削除機能  
-メッセージ機能  
+ユーザープロフィール表示機能 (buyer, supplier) 
+GoogleMapAPIを使用してユーザーの住所表示
 出品部品一覧表示機能  
-ユーザープロフィール表示機能  
+メッセージ機能  (実装予定)
 
 
-## 実装した機能についての画像、Gif、説明
+## 機能についての説明
+
+出品された部品を選択し、出品者へコンタクトをとります。
+![46028829d1997c228b7ec19eb7957f71](https://user-images.githubusercontent.com/79580640/117789059-eb69bc80-b282-11eb-9212-975aceaaa6c2.gif)
+その後、図面のやり取り、見積もりの提出等を行っていきます。
+
+
+ユーザーの住所はGoogleMapAPIで表示されるようにしています。
+![79a05943b21556caf5694f1ef98c27f9](https://user-images.githubusercontent.com/79580640/117789790-a8f4af80-b283-11eb-90b6-167c07f9f40c.png)
+
 
 ## 実装予定の機能
 
-お気に入り登録機能  
-GoogleMap表示機能
+メッセージ（メール）機能
+検索機能など
 
 ## データベース設計
 
@@ -88,7 +99,10 @@ GoogleMap表示機能
 | company_name       | string    | null: false
 | company_name_kana  | string    | null: false
 | prefecture_id      | integer   | null: false
-| profile            | text      | null: false
+| profile            | text      | 
+| address            | string    | null: false
+| latitude           | float     |
+| longitude          | float     |
 
 ### association
 - has_many :parts
@@ -109,7 +123,11 @@ GoogleMap表示機能
 | company_name         | string    | null: false
 | company_name_kana    | string    | null: false
 | prefecture_id        | integer   | null: false
-| profile              | text      | null: false
+| profile              | text      | 
+| address              | string    | null: false
+| latitude             | float     |
+| longitude            | float     |
+
 
 ### association
 - has_many :talk_room
@@ -122,9 +140,9 @@ GoogleMap表示機能
 | name                 | string     | null: false
 | info                 | text       | null: false
 | material_id          | integer    | null: false
-| processing_id           | integer    | null: false
+| processing_id        | integer    | null: false
 | deadline_id          | integer    | null: false
-| buyer             | references | null: false, foreign_key:true
+| buyer                | references | null: false, foreign_key:true
 
 ### association
 - belongs_to :buyer
@@ -154,8 +172,5 @@ GoogleMap表示機能
 - belongs_to :talk_room
 - belongs_to :buyer
 - belongs_to :supplier
-
-
-* ローカルでの動作方法
 
 
