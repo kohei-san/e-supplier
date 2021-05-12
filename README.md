@@ -24,11 +24,11 @@ http://35.72.86.30/
 
 ## テスト用アカウント
 
-Buyer<br>
+バイヤー<br>
 email:      buyer1@com<br>
 password:   a111111<br>
 <br>
-Supplier<br>
+サプライヤー<br>
 email:      supplier1@com<br>
 password:   a111111<br>
 
