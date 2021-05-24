@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_143549) do
   create_table "buyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_143549) do
   create_table "suppliers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false

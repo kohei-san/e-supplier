@@ -16,6 +16,8 @@ class Buyer < ApplicationRecord
     validates :address
   end
 
+  validates :profile, length: { maximum: 1000 }
+
   has_many :parts
   has_one_attached :image
   
