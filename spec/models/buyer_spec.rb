@@ -33,17 +33,16 @@ RSpec.describe Buyer, type: :model do
         another_buyer.valid?
         expect(another_buyer.errors.full_messages).to include("Email has already been taken")
       end
-
-      # it "は登録できない" do
-      #   @buyer.company_name = ""
-      #   @buyer.valid?
-      #   expect(@buyer.errors.full_messages).to include("")
-      # end
-      # it "は登録できない" do
-      #   @buyer.company_name = ""
-      #   @buyer.valid?
-      #   expect(@buyer.errors.full_messages).to include("")
-      # end
+      it "passwordが空では登録できない" do
+        @buyer.password = ""
+        @buyer.valid?
+        expect(@buyer.errors.full_messages).to include("Password can't be blank")
+      end
+      it "passwordが5文字以下では登録できない" do
+        @buyer.password = "12345"
+        @buyer.valid?
+        expect(@buyer.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+      end
       # it "は登録できない" do
       #   @buyer.company_name = ""
       #   @buyer.valid?
