@@ -16,6 +16,8 @@ class Supplier < ApplicationRecord
     validates :address
   end
 
+  validates :profile, length: { maximum: 1000 }
+
   has_one_attached :image
 
   geocoded_by :address
