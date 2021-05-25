@@ -2,11 +2,11 @@ ActiveRecord::Base.extend ActiveHash::Associations::ActiveRecordExtensions
 class Part < ApplicationRecord
   
   with_options presence: true do
-    validates :name
-    validates :info
-    validates :material_id
-    validates :processing_id
-    validates :deadline_id
+    validates :name,            length:       { maximum: 50 }
+    validates :info,            length:       { maximum: 1000 }
+    validates :material_id,     numericality: { other_than: 0 }
+    validates :processing_id,   numericality: { other_than: 0 }
+    validates :deadline_id,     numericality: { other_than: 0 }
   end
 
   has_one_attached :image

@@ -5,6 +5,7 @@ RSpec.describe Supplier, type: :model do
     @supplier = FactoryBot.build(:supplier)
   end
   describe "バイヤー新規登録" do
+    # 正常系
     context "新規登録できる場合" do
       it "全てのカラムが入力されている" do
         expect(@supplier).to be_valid
@@ -15,6 +16,7 @@ RSpec.describe Supplier, type: :model do
       end
     end
 
+    # 異常系
     context "新規登録できない場合" do
       it "emailが空では登録できない" do
         @supplier.email = ""
