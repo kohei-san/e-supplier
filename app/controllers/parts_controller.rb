@@ -46,7 +46,8 @@ class PartsController < ApplicationController
   def send_mail
     supplier = current_supplier
     buyer = @part.buyer
-    MailFromSupplierMailer.send_mail_to_buyer(buyer, supplier, @part)
+    text = params.require(:part).permit(:text)[:text]
+    SendEmail.test_email(buyer, supplier, @part, text)
     redirect_to root_path
   end
 
@@ -64,6 +65,5 @@ class PartsController < ApplicationController
 
   def part_params
     params.require(:part).permit(:name, :info, :material_id, :processing_id, :deadline_id, :image).merge(buyer_id: current_buyer.id)
-    
   end
 end
