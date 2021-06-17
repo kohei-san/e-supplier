@@ -46,7 +46,7 @@ class PartsController < ApplicationController
   def send_mail
     supplier = current_supplier
     buyer = @part.buyer
-    MailFromSupplierMailer.send_mail_to_buyer(buyer, supplier, @part)
+    SendEmail.test_email
     redirect_to root_path
   end
 
