@@ -64,7 +64,7 @@ password:   a111111<br>
 - ユーザープロフィール表示機能 (buyer, supplier) 
 - GoogleMapAPIを使用してユーザーの住所表示
 - 出品部品一覧表示機能  
-- メッセージ機能  (実装予定)
+- メール機能（supplier → buyer）
 
 
 ## 機能についての説明
@@ -80,8 +80,6 @@ password:   a111111<br>
 
 ## 実装予定の機能
 
-- 実装済み機能へのテスト追加
-- メッセージ（メール）機能
 - 検索機能など
 
 ## データベース設計
@@ -107,8 +105,6 @@ password:   a111111<br>
 
 ### association
 - has_many :parts
-- has_many :talk_room
-- has_many :messages
 
 ## supplier
 
@@ -130,9 +126,6 @@ password:   a111111<br>
 | longitude            | float     | <br>
 
 
-### association
-- has_many :talk_room
-- has_many :messages
 
 ## parts
 
@@ -147,31 +140,3 @@ password:   a111111<br>
 
 ### association
 - belongs_to :buyer
-
-## talk_room
-
-| columns      | style      | option <br>
-|---------------------------------------------------------- <br>
-| buyer        | references | null: false foreign_key: true <br>
-| supplier     | references | null: false foreign_key: true <br>
-
-### association
-- belongs_to :buyer
-- belongs_to :supplier
-- has_many :comments
-
-## comments
-
-| columns      | style      | option <br>
-|---------------------------------------------------------- <br>
-| comments     | text       | null: false <br>
-| buyer        | references | null: false foreign_key: true <br>
-| supplier     | references | null: false foreign_key: true <br>
-| talk_room    | references | null: false foreign_key: true <br>
-
-### association
-- belongs_to :talk_room
-- belongs_to :buyer
-- belongs_to :supplier
-
-
