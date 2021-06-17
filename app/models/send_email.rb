@@ -5,11 +5,11 @@ class SendEmail
   require 'sendgrid-ruby'
   include SendGrid
 
-  def self.test_email
-    from = Email.new(email: 'kohei.miyatake@gmail.com')
-    to = Email.new(email: 'kohei.miyatake@gmail.com')
-    subject = 'Sending with SendGrid is Fun'
-    content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
+  def self.test_email(buyer, supplier, part, text)
+    from = Email.new(email: ENV['EMAIL'])
+    to = Email.new(email: buyer.email)
+    subject = "#{supplier.company_name}より#{part.name}についての問い合わせです。"
+    content = Content.new(type: 'text/plain', value: "#{text}\n以上\n#{supplier.email}宛に返信をお願いします。")
     mail = Mail.new(from, subject, to, content)
     
     sg = SendGrid::API.new(api_key: ENV["SENDGRID_WEB_API_KEY"])
@@ -17,6 +17,5 @@ class SendEmail
     puts response.status_code
     puts response.body
     puts response.headers
-    
   end
 end
