@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
-  before_action :authenticate_buyer!, except: [:index, :show, :mail]
-  before_action :find_by_id, only: [:show, :edit, :update, :destroy, :mail]
+  before_action :authenticate_buyer!, except: [:index, :show, :mail, :send_mail]
+  before_action :find_by_id, only: [:show, :edit, :update, :destroy, :mail, :send_mail]
   before_action :owner_only, only: [:edit, :update, :destroy]
 
   def index
@@ -44,7 +44,10 @@ class PartsController < ApplicationController
   end
 
   def send_mail
-    
+    supplier = current_supplier
+    buyer = @part.buyer
+    MailFromSupplierMailer.send_mail_to_buyer(buyer, supplier, @part)
+    redirect_to root_path
   end
 
   private

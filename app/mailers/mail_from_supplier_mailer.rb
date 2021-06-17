@@ -6,7 +6,7 @@ class MailFromSupplierMailer < ApplicationMailer
     @supplier = supplier
     @part = part
     mail(
-      :to => @buyer.email,
+      :to => 'kohei.miyatake@gmail.com',
       :subject => "#{@supplier}から#{@part}についての問い合わせです。"
     )
   end
