@@ -37,7 +37,9 @@
         <div class="img-hover swiper-slide">
           <%= link_to (part_path(part.id)), class:"link text-dark" do %>
             <div class="card p-2 my-2 shadow">
+              <% if part.image.attached? %>
               <%= image_tag part.image, class:"card-img-top img-height mb-2" %>
+              <% end %>
               <p class="fw-bold text-secondary pt-1"><%= "#{part.name}" %></p>
               <% count += 1 %>
               <% if count == 12%>
