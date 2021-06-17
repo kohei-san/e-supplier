@@ -17,10 +17,7 @@ https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJ
 
 
 ## URL
-http://35.72.86.30/
-
-ドメイン取得予定
-
+http://www.e-supplier.net
 
 ## テスト用アカウント
 
