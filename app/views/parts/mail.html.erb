@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<body class="bg-light">
+
+<div class="container pt-5">
+  <div class="d-flex justify-content-center">
+    <div class="form">
+      <%= form_with model: @part, url: {controller: 'parts', action: 'send_mail'} , local: true do |f| %>
+        <div class='container text-center mt-5 mb-3'>
+          <h2 class="">
+            問い合わせ内容入力
+          </h2>
+          <p><span class="must-fill">*</span>
+            <%= "#{@part.buyer.company_name}へメールを送信します。"  %>
+          </p>
+          <%# errorメッセージを'shared/error_messages'から引用 %>
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
+
+        <div class="row form-group g-1 mb-5">
+          <div>
+            <label>問い合わせ内容</label>
+            <span class="must-fill">*</span>
+          </div>
+          <%= f.text_area :text ,class:"form-control" ,maxlength: 1000 %>
+        </div>
+
+        <div class="row mt-4 g-1">
+          <%= f.submit "送信" ,class:"btn btn-outline-primary col-md-6 offset-md-3" %>
+        </div>    
+      <% end %>  
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>
