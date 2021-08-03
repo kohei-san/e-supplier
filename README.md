@@ -17,7 +17,7 @@ https://docs.google.com/presentation/d/1QkHJtIfg07VZ4IFVotHTPuLbjF_p3n2UqAeWr7GJ
 
 
 ## URL
-http://www.e-supplier.net
+https://shrouded-forest-16187.herokuapp.com/
 
 ## テスト用アカウント
 
