@@ -7,7 +7,6 @@ class Part < ApplicationRecord
     validates :material_id,     numericality: { other_than: 0 }
     validates :processing_id,   numericality: { other_than: 0 }
     validates :deadline_id,     numericality: { other_than: 0 }
-    validates :image
   end
 
   has_one_attached :image
